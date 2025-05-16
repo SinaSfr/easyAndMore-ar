@@ -365,13 +365,21 @@ document.addEventListener("DOMContentLoaded", function () {
     const nextButtons = document.querySelectorAll(".next");
     const intervalTime = 3000;
     let intervals = new Map();
-
+  
+    const lang = document.documentElement.getAttribute("lang");
+    const isRTL = lang === "fa" || lang === "ar";
+  
     function updateSlider(slider, currentIndex) {
       const slides = slider.querySelector(".slides");
-      const offset = -currentIndex * 280;
+      const slideWidth = slides.querySelector(".slide").clientWidth;
+  
+      const offset = isRTL
+        ? currentIndex * slideWidth
+        : -currentIndex * slideWidth;
+  
       slides.style.transform = `translateX(${offset}px)`;
     }
-
+  
     function nextSlide(event, manual = false) {
       const slider = event ? event.target.closest(".slider") : this;
       const slideItems = slider.querySelectorAll(".slide");
@@ -381,10 +389,10 @@ document.addEventListener("DOMContentLoaded", function () {
       currentIndex = (currentIndex + 1) % slideCount;
       slider.setAttribute("data-current-index", currentIndex);
       updateSlider(slider, currentIndex);
-
+  
       if (manual) restartAutoSlide(slider);
     }
-
+  
     function prevSlide(event) {
       const slider = event.target.closest(".slider");
       const slideItems = slider.querySelectorAll(".slide");
@@ -394,35 +402,35 @@ document.addEventListener("DOMContentLoaded", function () {
       currentIndex = (currentIndex - 1 + slideCount) % slideCount;
       slider.setAttribute("data-current-index", currentIndex);
       updateSlider(slider, currentIndex);
-
+  
       restartAutoSlide(slider);
     }
-
+  
     function startAutoSlide(slider) {
       if (intervals.has(slider)) clearInterval(intervals.get(slider));
-
+  
       const interval = setInterval(
         () => nextSlide.call(slider, null, false),
         intervalTime
       );
       intervals.set(slider, interval);
     }
-
+  
     function restartAutoSlide(slider) {
       if (intervals.has(slider)) {
         clearInterval(intervals.get(slider));
         startAutoSlide(slider);
       }
     }
-
+  
     nextButtons.forEach((nextButton) => {
       nextButton.addEventListener("click", (event) => nextSlide(event, true));
     });
-
+  
     prevButtons.forEach((prevButton) => {
       prevButton.addEventListener("click", prevSlide);
     });
-
+  
     sliders.forEach((slider) => {
       startAutoSlide(slider);
     });

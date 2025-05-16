@@ -1,25 +1,25 @@
-<basis core="dbsource" source="basiscore" lid="1" mid="1" name="db" catid="212486">
+<basis core="dbsource" source="basiscore" lid="3" mid="1" name="db" catid="212486">
     <member name="hotel-list" type="list" link="article.bc" order="ord" size="387x220" propertyid="3087418,3087419"
         pageno="[##cms.query.pagenum|(1)##]" perpage="12" />
     <member name="paging" type="list" request="paging" count="3" parentname="hotel-list" />
 </basis>
-<basis core="dbsource" source="basiscore" lid="1" mid="18" name="db" usedforid="[##cms.query.catid##]">
+<basis core="dbsource" source="basiscore" lid="3" mid="18" name="db" usedforid="[##cms.query.catid##]">
     <member name="scalar" type="scalar" typeid="150" />
 </basis>
-<basis core="dbsource" source="basiscore" lid="1" mid="1" name="db" catid="[##cms.query.catid##]">
+<basis core="dbsource" source="basiscore" lid="3" mid="1" name="db" catid="[##cms.query.catid##]">
     <member name="navigation" type="tree" request="navcatid" parentid="[##cms.query.catid##]" />
 </basis>
-<basis core="dbsource" source="basiscore" name="db" mid="1" lid="1" usedforid="2371080">
+<basis core="dbsource" source="basiscore" name="db" mid="1" lid="3" usedforid="2371080">
     <member name="faq" type="view" propertyid="" postsql="select * from [db.faq] where TypeID<>150 " />
     <member name="faqtitle" type="view" propertyid="" postsql="select * from [db.faqtitle] where TypeID=150 " />
 </basis>
-<basis core="dbsource" source="media" lid="1" name="db" usedforid="2377591" sourcemid="article">
+<basis core="dbsource" source="media" lid="3" name="db" usedforid="2377591" sourcemid="article">
     <member type="list" name="first-image" format="4" order="ord"></member>
 </basis>
 
 
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<html lang="ar" dir="rtl">
 
 <head>
     <meta charset="UTF-8">
@@ -27,7 +27,7 @@
     <!-- Title & Description -->
     <title>[##cms.seo.title|(More and Easy Travel Agency)##]</title>
     <meta name="description"
-      content="[##cms.seo.description|(بهترین و آسان ترین سفر را با آژانس مسافرتی More and Easy تجربه کنید.)##]">
+      content="[##cms.seo.description|(استمتع بأفضل وأسهل رحلة مع وكالة مور آند إيزي للسفر)##]">
     <!-- Title & Description -->
     <basis core="dbsource" source="hosting" name="tag" urlid="[##cms.seo.urlid##]">
       <member type="list" name="list" request="taglist" preview=""></member>
@@ -41,10 +41,10 @@
       </face>
     </basis>
     <!-- pwa metatags -->
-    <basis core="call" file="pwa.inc" lid="1" />
+    <basis core="call" file="pwa.inc" lid="3" />
     <!-- common styles for all page -->
     <link rel="stylesheet" href="[##cms.cms.cdn##]/_css/swiper-bundle.min.css" />
-    <basis core="call" file="style.inc" lid="1" />
+    <basis core="call" file="style.inc" lid="3" />
   </head>
   <style>
     .Basis_Calendar {
@@ -384,7 +384,7 @@
 </style>
 
 <body>
-    <basis core="call" file="header.inc" lid="1" />
+    <basis core="call" file="header.inc" lid="3" />
 
     <main>
         <section>
@@ -423,7 +423,7 @@
                             <li class="inline-block font-normal text-white" itemprop="itemListElement" itemscope
                                 itemtype="https://schema.org/ListItem">
                                 <a class="text-white hover:text-secondary-600" itemprop="item" href="/"
-                                    aria-label="home"><span itemprop="name">صفحه اصلی</span>
+                                    aria-label="home"><span itemprop="name">الصفحة الرئيسية</span>
                                     <meta itemprop="position" content="1" />
                                 </a>
                             </li>
@@ -526,7 +526,7 @@
                                 <img src="./_images/@prp_3087418star.png" alt="1Star" loading="lazy">
                             </div>
                             <a href="/article.bc?id=@id"
-                                class="flex justify-center mt-6 text-sm transition-all duration-300 text-primary-800 hover:text-secondary-600 hover:scale-110">مشاهده هتل</a>
+                                class="flex justify-center mt-6 text-sm transition-all duration-300 text-primary-800 hover:text-secondary-600 hover:scale-110">عرض الفندق</a>
                         </div>
                     </div>
                 </face>
@@ -546,7 +546,7 @@
                                 <img src="./_images/@prp_3087418star.png" alt="1Star" loading="lazy">
                             </div>
                             <a href="@link"
-                                class="flex justify-center mt-6 text-sm transition-all duration-300 text-primary-800 hover:text-secondary-600 hover:scale-110">مشاهده هتل</a>
+                                class="flex justify-center mt-6 text-sm transition-all duration-300 text-primary-800 hover:text-secondary-600 hover:scale-110">عرض الفندق</a>
                         </div>
                     </div>
                 </face>
@@ -798,7 +798,7 @@
         });
 
     </script>
-    <basis core="call" file="footer.inc" lid="1" />
+    <basis core="call" file="footer.inc" lid="3" />
 
 
 

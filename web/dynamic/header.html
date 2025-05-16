@@ -1,7 +1,7 @@
-<basis core="dbsource" source="basiscore" lid="1" mid="1" name="services">
+<basis core="dbsource" source="basiscore" lid="3" mid="1" name="services">
     <member name="cat" type="tree" request="cat" parentid="212487" order="ord"></member>
 </basis>
-<basis core="dbsource" source="basiscore" name="db" mid="5" lid="1" usedforid="[##cms.cms.ownerid##]">
+<basis core="dbsource" source="basiscore" name="db" mid="5" lid="3" usedforid="[##cms.cms.ownerid##]">
     <member name="info" type="view" />
 </basis>
 <header>
@@ -14,13 +14,13 @@
         <nav class="hidden h-full lg:flex lg:grow">
             <ul class="flex items-center gap-8">
                 <li>
-                    <a href="هتل" class="text-primary-800 hover:text-secondary-600">هتل</a>
+                    <a href="/الفنادق" class="text-primary-800 hover:text-secondary-600">فندق</a>
                 </li>
                 <basis core="tree" datamembername="services.cat" idcol="catid" parentidcol="parentid"
                     nullvalue="212487">
                     <layout>
                         <li class="flex h-full group">
-                            <a href="خدمات"
+                            <a href="خدمه"
                                 class="flex items-center gap-2 group text-primary-800 hover:text-secondary-600">خدمات
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                     xmlns="http://www.w3.org/2000/svg"
@@ -48,17 +48,17 @@
                 </basis>
 
                 <li class="lg:hidden xl:block">
-                    <a href="/گالری" class="text-primary-800 hover:text-secondary-600">گالری</a>
+                    <a href="/معرض" class="text-primary-800 hover:text-secondary-600">معرض الصور</a>
                 </li>
                 <li>
                     <a href="/مقالات" class="text-primary-800 hover:text-secondary-600">مقالات</a>
                 </li>
                 <li>
-                    <a href="/Contact-us" class="text-primary-800 hover:text-secondary-600">درباره ما</a>
+                    <a href="/Contact-us" class="text-primary-800 hover:text-secondary-600">من نحن</a>
                 </li>
                 <li>
                     <a href="/images/tursaub-maetravel.pdf" target="_blank"
-                        class="text-primary-800 hover:text-secondary-600">شماره گواهی TURSAB: ۱۷۷۲۷</a>
+                        class="text-primary-800 hover:text-secondary-600">رقم شهادة TURSAB: ١٧٧٢٧</a>
                 </li>
             </ul>
         </nav>
@@ -84,7 +84,7 @@
                         <ul class="text-sm divide-y divide-primary-50">
                             <li class="flex items-center hover:bg-primary-50">
                                 <div class="after:content-bedIcon"></div>
-                                <a href="/هتل" class="w-full text-primary-800">هتل</a>
+                                <a href="/الفنادق" class="w-full text-primary-800">فندق</a>
                             </li>
                             <basis core="tree" datamembername="services.cat" idcol="catid" parentidcol="parentid"
                                 nullvalue="212487">
@@ -132,7 +132,7 @@
 
                             <li class="flex items-center hover:bg-primary-50">
                                 <div class="after:content-imageIcon"></div>
-                                <a href="/گالری" class="w-full text-primary-800">گالری</a>
+                                <a href="/معرض" class="w-full text-primary-800">معرض الصور</a>
                             </li>
                             <li class="flex items-center hover:bg-primary-50">
                                 <svg class="flex-shrink-0" width="48" height="48" viewBox="0 0 48 48" fill="none"
@@ -148,7 +148,7 @@
                             </li>
                             <li class="flex items-center hover:bg-primary-50">
                                 <div class="after:content-messageHeart"></div>
-                                <a href="/Contact-us" class="w-full text-primary-800">درباره ما</a>
+                                <a href="/Contact-us" class="w-full text-primary-800">من نحن</a>
                             </li>
                         </ul>
                     </nav>
@@ -176,7 +176,7 @@
             <!-- header menu -->
             <div
             class="Login_Information bg-primary-800 text-sm px-6 py-4 text-white rounded-[50px] text-center w-full block transition-all hover:bg-secondary-600 duration-300">
-            <basis core="call" file="authentication/modal" lid="1"></basis>
+            <basis core="call" file="authentication/modal" lid="3"></basis>
         </div>
             <div class="items-center hidden group lg:flex lg:gap-3">
                 <div class="transition-all duration-300 rounded-full bg-secondary-600 group-hover:bg-primary-800">

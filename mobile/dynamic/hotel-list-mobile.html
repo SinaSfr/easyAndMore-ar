@@ -1,24 +1,24 @@
-<basis core="dbsource" source="basiscore" lid="1" mid="1" name="db" catid="212486">
+<basis core="dbsource" source="basiscore" lid="3" mid="1" name="db" catid="212486">
   <member name="hotel-list" type="list" link="article.bc" order="ord" size="387x220" propertyid="3087418,3087419"
     pageno="[##cms.query.pagenum|(1)##]" perpage="12" />
   <member name="paging" type="list" request="paging" count="3" parentname="hotel-list" />
 </basis>
-<basis core="dbsource" source="basiscore" lid="1" mid="18" name="db" usedforid="[##cms.query.catid##]">
+<basis core="dbsource" source="basiscore" lid="3" mid="18" name="db" usedforid="[##cms.query.catid##]">
   <member name="scalar" type="scalar" typeid="150" />
 </basis>
-<basis core="dbsource" source="basiscore" lid="1" mid="1" name="db" catid="[##cms.query.catid##]">
+<basis core="dbsource" source="basiscore" lid="3" mid="1" name="db" catid="[##cms.query.catid##]">
   <member name="navigation" type="tree" request="navcatid" parentid="[##cms.query.catid##]" />
 </basis>
-<basis core="dbsource" source="basiscore" name="db" mid="1" lid="1" usedforid="2371080">
+<basis core="dbsource" source="basiscore" name="db" mid="1" lid="3" usedforid="2371080">
   <member name="faq" type="view" propertyid="" postsql="select * from [db.faq] where TypeID<>150 " />
   <member name="faqtitle" type="view" propertyid="" postsql="select * from [db.faqtitle] where TypeID=150 " />
 </basis>
-<basis core="dbsource" source="media" lid="1" name="db" usedforid="2377592" sourcemid="article">
+<basis core="dbsource" source="media" lid="3" name="db" usedforid="2377592" sourcemid="article">
   <member type="list" name="first-image" format="4" order="ord"></member>
 </basis>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 
 <head>
   <meta charset="UTF-8">
@@ -26,7 +26,7 @@
   <!-- Title & Description -->
   <title>[##cms.seo.title|(More and Easy Travel Agency)##]</title>
   <meta name="description"
-    content="[##cms.seo.description|(بهترین و آسان ترین سفر را با آژانس مسافرتی More and Easy تجربه کنید.)##]">
+    content="[##cms.seo.description|(استمتع بأفضل وأسهل رحلة مع وكالة مور آند إيزي للسفر)##]">
   <!-- Title & Description -->
   <basis core="dbsource" source="hosting" name="tag" urlid="[##cms.seo.urlid##]">
     <member type="list" name="list" request="taglist" preview=""></member>
@@ -40,14 +40,355 @@
     </face>
   </basis>
   <!-- pwa metatags -->
-  <basis core="call" file="pwa.inc" lid="1" pageindex="[##cms.cms.pageindex##]" />
+  <basis core="call" file="pwa.inc" lid="3" pageindex="[##cms.cms.pageindex##]" />
   <!-- common styles for all page -->
   <link rel="stylesheet" href="[##cms.cms.cdn##]/_css/swiper-bundle.min.css" />
-  <basis core="call" file="style.inc" lid="1" pageindex="[##cms.cms.pageindex##]" />
+  <basis core="call" file="style.inc" lid="3" pageindex="[##cms.cms.pageindex##]" />
 </head>
+<style>
+  .Basis_Calendar {
+      font-family: "Dana" !important
+  }
 
+  .Basis_Calendar .selected_date {
+      background: var(--secondary) !important;
+  }
+
+  .confirm-date-content button:hover {
+      background: var(--secondary);
+  }
+
+  .confirm-date-content button {
+      background: var(--primary);
+      color: #fff;
+  }
+
+  .calendar-apply-date:hover {
+      background: var(--secondary);
+  }
+
+  .calendar-apply-date {
+      background: var(--primary);
+      color: #fff;
+  }
+
+  .Basis_Calendar .selected_day {
+      background: var(--secondary);
+  }
+
+  .day.days_available {
+      background: var(--primary);
+  }
+
+  .calendar-switch {
+      color: var(--primary);
+  }
+
+  .Basis_Calendar .section_next_month,
+  .Basis_Calendar .section_prev_month {
+      color: var(--primary);
+  }
+
+  .Basis_Calendar .current_day::after {
+      border-color: var(--secondary) transparent transparent;
+  }
+
+  .Basis_Calendar .month_day_list table td:not(.disable_day, .empty_day, .expire_day):hover {
+      border-color: var(--primary);
+  }
+
+  .Basis_Calendar .current_day {
+      background: var(--primary) !important;
+      color: #fff !important;
+  }
+
+  .Basis_Calendar_Box {
+      font-family: "Dana" !important;
+      margin-top: 1rem;
+  }
+
+  .calendar-apply-date,
+  .calendar-switch,
+  .calendar-today,
+  .calendar-footer input::placeholder {
+      font-family: "Dana" !important;
+  }
+
+  .calendar-footer input,
+  .calendar-footer ::placeholder {
+      font-family: "Dana";
+  }
+
+  .search-box-container input,
+  .search-box-container select,
+  .search-box-container button {
+      font-family: "Dana" !important;
+  }
+
+  .search-box-container input::placeholder {
+      color: #284e65 !important;
+      font-size: 16px !important;
+  }
+
+  .search-box-container .text-textColor {
+      color: #284e65 !important;
+      font-size: 16px !important;
+  }
+
+  .passenger-counts {
+      color: #284e65 !important;
+      font-size: 16px !important;
+  }
+
+  .r-hotel {
+      padding: 48px 12px 16px;
+      background-color: var(--primary-800);
+      border-radius: 8px;
+  }
+
+  .search-nav {
+      display: none;
+  }
+
+  .click-content {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      background-color: #ffffff !important;
+      height: 56px !important;
+      border-radius: 8px;
+      padding: 8px 12px !important;
+  }
+
+  .reserve-field.departure-date,
+  .reserve-field.return-date,
+  .reserve-field.passengers-field {
+      background-color: #ffffff !important;
+      height: 56px !important;
+      border-radius: 8px;
+      padding: 8px 12px !important;
+  }
+
+  .reserve-field.departure-route,
+  .reserve-field.destination-route {
+      height: 56px !important;
+  }
+
+  .search-hotel {
+      width: 100% !important;
+      background-color: var(--secondary-600) !important;
+      height: 56px !important;
+      color: white !important;
+      margin-top: 0 !important;
+      border-radius: 8px;
+      font-size: 14px !important;
+      transition: all 300ms ease;
+  }
+
+  .search-hotel:hover {
+      background-color: var(--primary-400) !important;
+  }
+
+  .reserve-search{
+      height: auto !important;
+  }
+
+  .reserve-field.departure-route,
+  .Basis_Date_Box,
+  .reserve-field.passengers-field {
+      flex: 1;
+  }
+
+  .Basis_Date_Box {
+      flex-direction: column;
+      gap: 3rem !important;
+      margin-top: 3rem;
+      margin-bottom: 3rem !important;
+  }
+
+  .reserve-field.departure-date,
+  .reserve-field.return-date {
+      width: 100% !important;
+  }
+
+  .reserve-field.departure-route>div:first-of-type label svg {
+      width: 30px;
+      height: 30px;
+  }
+
+  .reserve-field.passengers-field label svg,
+  .reserve-field.departure-date label svg,
+  .reserve-field.return-date label svg,
+  .search-hotel svg,
+  .reserve-field.departure-route p,
+  .reserve-field.departure-date p,
+  .reserve-field.return-date p,
+  .searchList.hidden-box div.h-9.leading-9,
+  .second-room-type,
+  .deleteRoom,
+  .close-passenger-box {
+      display: none !important;
+  }
+
+  .reserve-field.passengers-field>div:first-of-type {
+      display: flex;
+      align-items: center;
+      padding: 0 !important;
+  }
+
+  .reserve-field.departure-route>div:first-of-type {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0 10px !important;
+  }
+
+  .reserve-field.passengers-field>div:first-of-type label,
+  .reserve-field.departure-route>div:first-of-type label,
+  .reserve-field.return-date label,
+  .reserve-field.return-date label {
+      width: auto !important;
+  }
+
+  .reserve-field.passengers-field>div:first-of-type label span,
+  .reserve-field.departure-route>div:first-of-type label span,
+  .reserve-field.departure-date label span,
+  .reserve-field.return-date label span {
+      position: absolute;
+      top: -32px;
+      font-size: 16px;
+      color: white;
+      right: 0;
+  }
+
+  .Basis_Date.end_date,
+  .Basis_Date.start_date {
+      padding: 0 12px 0 0 !important;
+  }
+
+  /* .Basis_Calendar_Box{
+      top: unset !important;
+      margin-top: 0 !important;
+  } */
+
+  .searchList {
+      border-radius: 8px;
+      box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+      left: 0 !important;
+  }
+
+  .ul-list ul li:first-of-type {
+      background-color: var(--primary-900) !important;
+      color: white !important;
+  }
+
+  .ul-list ul li:not(:last-child) {
+      border-bottom: 1px solid var(--primary-100);
+  }
+
+  .ul-list ul li:hover {
+      background-color: var(--primary-50);
+      transition: all 300ms ease;
+  }
+
+  .ul-list ul li{
+      text-align: right !important;
+  }
+
+  .passenger-item.adult-passenger-item,
+  .passenger-item.child-passenger-item,
+  .passenger-item.infant-passenger-item,
+  .passenger-item.room-passenger-item,
+  .passengerbox.hidden-box .passenger-item {
+      display: flex;
+      flex-direction: column;
+  }
+
+  .passenger-item.child-passenger-item ul,
+  .passenger-item.adult-passenger-item ul,
+  .passenger-item.infant-passenger-item ul,
+  .passenger-item.room-passenger-item ul,
+  .passengerbox.hidden-box .passenger-item ul {
+      height: auto !important;
+      line-height: normal !important;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+  }
+
+  .passengerbox.hidden-box {
+      width: 100% !important;
+      padding: 24px !important;
+      top: 9px;
+      border-radius: 8px;
+  }
+
+  .passenger-item.room-passenger-item ul li,
+  .passenger-item.adult-passenger-item ul li,
+  .passenger-item.child-passenger-item ul li {
+      width: 48px !important;
+      height: 48px !important;
+  }
+
+  .passenger-item.room-passenger-item {
+      margin-bottom: 32px !important;
+  }
+
+  .minus-count,
+  .plus-count {
+      line-height: normal !important;
+      background: var(--primary-100);
+      border-radius: 100%;
+      display: flex !important;
+      align-items: center;
+      justify-content: center;
+  }
+
+  .minus-count div,
+  .plus-count div {
+      border: 1px solid var(--primary-800) !important;
+      border-radius: 100% !important;
+      width: 24px !important;
+      height: 24px !important;
+      display: flex !important;
+      align-items: center;
+      justify-content: center;
+  }
+
+  .minus-count div span,
+  .plus-count div span {
+      height: 29px;
+      font-weight: 500;
+      color: var(--primary-800);
+  }
+
+  .adultcount,
+  .childcount,
+  .roomcount {
+      width: 100%;
+      height: 100% !important;
+      color: white;
+      background-color: var(--primary-800);
+      border-radius: 100%;
+      display: flex !important;
+      align-items: center;
+      justify-content: center;
+  }
+
+  .numberOfRoom,
+  .passenger-item.room-passenger-item label {
+      font-weight: 700;
+  }
+
+  .passenger-item adult-passenger-item label,
+  .passenger-item child-passenger-item label,
+  .numberOfRoom,
+  .passenger-item.room-passenger-item label {
+      font-size: 14px !important;
+  }
+</style>
 <body onload="loadContentHomePage()">
-  <basis core="call" file="header.inc" lid="1" pageindex="[##cms.cms.pageindex##]" />
+  <basis core="call" file="header.inc" lid="3" pageindex="[##cms.cms.pageindex##]" />
 
   <main>
     <section>
@@ -92,22 +433,16 @@
       </div>
 
       <!-- search engine  -->
-      <section id="search-box"
-        class="load-search-box-in-condition mx-auto rounded-lg z-10 -mt-56 max-xl:w-[97%] xl:max-w-7xl">
-        <div class="relative z-10 flex justify-center w-full mt-24 mb-24 text-center loading"><svg aria-hidden="true"
-            class="w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-primary" viewBox="0 0 100 101" fill="none"
-            xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
-              fill="currentColor"></path>
-            <path
-              d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
-              fill="currentFill"></path>
-          </svg></div>
-      </section>
+      <section class="mx-auto rounded-lg z-10 max-xl:w-[97%] xl:max-w-7xl min-h-[514px]">
+        <div class="w-[90%] mt-[-35rem] mx-auto search-box-container en">
+            <div id="search-box" class="dir-rtl">
+                <div class="flex justify-center"><span class="loader"></span></div>
+            </div>
+        </div>
+    </section>
       <!-- search engine  -->
     </section>
-    <section class="max-lg:w-[95%] mx-auto mt-5">
+    <section class="max-lg:w-[95%] mx-auto mt-16">
       <basis core="list" datamembername="db.hotel-list">
         <layout>
           <div class="flex flex-col gap-2">
@@ -128,7 +463,7 @@
                 <h2 class="mb-2 font-bold text-zinc-900">@title</h2>
                 <img src="./_images/@prp_3087418star.png" alt="1Star" loading="lazy">
               </div>
-              <a href="/article.bc?id=@id" class="flex justify-center mt-6 text-sm text-primary-800">مشاهده هتل</a>
+              <a href="/article.bc?id=@id" class="flex justify-center mt-6 text-sm text-primary-800">عرض الفندق</a>
             </div>
           </div>
         </face>
@@ -146,7 +481,7 @@
                 <h2 class="mb-2 font-bold text-zinc-900">@title</h2>
                 <img src="./_images/@prp_3087418star.png" alt="1Star" loading="lazy">
               </div>
-              <a href="@link" class="flex justify-center mt-6 text-sm text-primary-800">مشاهده هتل</a>
+              <a href="@link" class="flex justify-center mt-6 text-sm text-primary-800">عرض الفندق</a>
             </div>
           </div>
         </face>
@@ -291,8 +626,80 @@
   </main>
 
   <script src="[##cms.cms.cdn##]/_js/swiper-bundle.11.2.5.min.js"></script>
-  <basis core="call" file="Client_RkeyScript.inc" lid="1"></basis>
-  <basis core="call" file="footer.inc" lid="1" pageindex="[##cms.cms.pageindex##]" />
+  <basis core="call" file="Client_RkeyScript.inc" lid="3"></basis>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const isDesktop = window.innerWidth > 1024;
+        const requiredFiles = isDesktop
+            ? ["moreAndEasy.ui.min.css"]
+            : ["moreAndEasy-mob.ui.min.css"];
+
+        function checkAllResourcesLoaded() {
+            const resources = performance.getEntriesByType("resource");
+            const loadedFiles = resources
+                .map((res) => res.name.split("/").pop())
+                .filter((name) => requiredFiles.includes(name));
+
+            return requiredFiles.every((file) => loadedFiles.includes(file));
+        }
+
+        if (document.getElementById("search-box")) {
+            function fetchEngine() {
+                try {
+                    const urlParams = new URLSearchParams(window.location.search);
+                    const lid = urlParams.get("lid");
+                    const lang = document.documentElement.getAttribute("lang");
+
+                    let url = "test-search-engine.bc";
+                    if (lid === "1" || lang === "fa") {
+                        url += "?lid=1";
+                    } else if (lid === "2" || lang === "en") {
+                        url += "?lid=2";
+                    } else if (lid === "3" || lang === "ar") {
+                        url += "?lid=3";
+                    }
+
+                    const xhrobj = new XMLHttpRequest();
+                    xhrobj.open("GET", url);
+                    xhrobj.send();
+
+                    xhrobj.onreadystatechange = function () {
+                        if (this.readyState == 4 && this.status == 200) {
+                            const container = document.getElementById("search-box");
+                            container.innerHTML = xhrobj.responseText;
+
+                            const scripts = container.getElementsByTagName("script");
+                            for (let i = 0; i < scripts.length; i++) {
+                                const scriptTag = document.createElement("script");
+                                if (scripts[i].src) {
+                                    scriptTag.src = scripts[i].src;
+                                    scriptTag.async = false;
+                                } else {
+                                    scriptTag.text = scripts[i].textContent;
+                                }
+                                document.head.appendChild(scriptTag).parentNode.removeChild(scriptTag);
+                            }
+                        }
+                    };
+                } catch (error) {
+                    console.error("A problem has occurred. Please be patient.", error);
+                }
+            }
+
+            function waitForFiles() {
+                if (checkAllResourcesLoaded()) {
+                    fetchEngine();
+                } else {
+                    setTimeout(waitForFiles, 500);
+                }
+            }
+
+            waitForFiles();
+        }
+    });
+
+</script>
+  <basis core="call" file="footer.inc" lid="3" pageindex="[##cms.cms.pageindex##]" />
 
 </body>
 

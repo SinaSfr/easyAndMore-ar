@@ -185,6 +185,9 @@ body {
 .mt-16 {
   margin-top: 4rem;
 }
+.mt-20 {
+  margin-top: 5rem;
+}
 .mt-2 {
   margin-top: 0.5rem;
 }
@@ -229,6 +232,9 @@ body {
 }
 .hidden {
   display: none;
+}
+.min-h-\[514px\] {
+  min-height: 514px;
 }
 .h-auto {
   height: auto;

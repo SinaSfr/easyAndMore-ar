@@ -1,14 +1,14 @@
-<basis core="dbsource" source="basiscore" lid="1" mid="18" name="db" usedforid="[##cms.query.catid##]">
+<basis core="dbsource" source="basiscore" lid="3" mid="18" name="db" usedforid="[##cms.query.catid##]">
   <member name="scalar" type="scalar" typeid="150" />
 </basis>
-<basis core="dbsource" source="media" lid="1" name="db" usedforid="[##cms.query.gid##]" sourcemid="article">
+<basis core="dbsource" source="media" lid="3" name="db" usedforid="[##cms.query.gid##]" sourcemid="article">
   <member type="list" name="gallery" format="4" order="ord"></member>
 </basis>
-<basis core="dbsource" source="basiscore" lid="1" mid="1" name="services-item">
+<basis core="dbsource" source="basiscore" lid="3" mid="1" name="services-item">
   <member name="cat" type="tree" request="cat" parentid="[##cms.query.catid##]" order="ord"></member>
 </basis>
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<html lang="ar" dir="rtl">
 
 <head>
   <meta charset="UTF-8">
@@ -16,7 +16,7 @@
   <!-- Title & Description -->
   <title>[##cms.seo.title|(More and Easy Travel Agency)##]</title>
   <meta name="description"
-    content="[##cms.seo.description|(بهترین و آسان ترین سفر را با آژانس مسافرتی More and Easy تجربه کنید.)##]">
+    content="[##cms.seo.description|(استمتع بأفضل وأسهل رحلة مع وكالة مور آند إيزي للسفر)##]">
   <!-- Title & Description -->
   <basis core="dbsource" source="hosting" name="tag" urlid="[##cms.seo.urlid##]">
     <member type="list" name="list" request="taglist" preview=""></member>
@@ -30,15 +30,15 @@
     </face>
   </basis>
   <!-- pwa metatags -->
-  <basis core="call" file="pwa.inc" lid="1" pageindex="[##cms.cms.pageindex##]" />
+  <basis core="call" file="pwa.inc" lid="3" pageindex="[##cms.cms.pageindex##]" />
   <!-- common styles for all page -->
   <link rel="stylesheet" href="[##cms.cms.cdn##]/_css/swiper-bundle.min.css" />
-  <basis core="call" file="style.inc" lid="1" pageindex="[##cms.cms.pageindex##]" />
+  <basis core="call" file="style.inc" lid="3" pageindex="[##cms.cms.pageindex##]" />
 </head>
 
 <body>
 
-  <basis core="call" file="header.inc" lid="1" pageindex="[##cms.cms.pageindex##]" />
+  <basis core="call" file="header.inc" lid="3" pageindex="[##cms.cms.pageindex##]" />
 
   <main>
     <section class="max-lg:w-[95%] mx-auto mt-8 mb-14 flex flex-col gap-3">
@@ -50,7 +50,7 @@
       <basis core="list" datamembername="services-item.cat">
         <layout>
           <div class="flex flex-col gap-3 fetch-container-article"
-            data-gids="[##cms.query.gid1##],[##cms.query.gid2##],[##cms.query.gid3##],[##cms.query.gid4##],[##cms.query.gid5##]">
+          data-gids="[##cms.query.trid##],[##cms.query.toid##],[##cms.query.evid##],[##cms.query.exid##],[##cms.query.seid##]">
             @child
           </div>
         </layout>
@@ -59,7 +59,7 @@
             <!-- Slider main container -->
             <!-- Additional required wrapper -->
             <div class="flex justify-center">
-              <div class="relative slider">
+              <div class="relative slider" data-current-index="0">
                 <div class="slider-wrapper fetch-content-article-image-@RowNumber">
     
     
@@ -114,7 +114,7 @@
   </main>
 
   <script src="[##cms.cms.cdn##]/_js/swiper-bundle.11.2.5.min.js"></script>
-  <basis core="call" file="footer.inc" lid="1" pageindex="[##cms.cms.pageindex##]" />
+  <basis core="call" file="footer.inc" lid="3" pageindex="[##cms.cms.pageindex##]" />
 
 
 </body>

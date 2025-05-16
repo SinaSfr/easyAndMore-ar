@@ -1,18 +1,18 @@
-<basis core="dbsource" source="basiscore" lid="1" mid="1" name="db"
+<basis core="dbsource" source="basiscore" lid="3" mid="1" name="db"
   catid="214112">
   <member name="gallery-list" type="list" link="article.bc" propertyid="" perpage="9"
     size="" typeid="159" order="ord" />
 </basis>
 
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<html lang="ar" dir="rtl">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0,shrink-to-fit=no,viewport-fit=cover">
     <!-- Title & Description -->
     <title>[##cms.seo.title|(More and Easy Travel Agency)##]</title>
     <meta name="description"
-      content="[##cms.seo.description|(بهترین و آسان ترین سفر را با آژانس مسافرتی More and Easy تجربه کنید.)##]">
+      content="[##cms.seo.description|(استمتع بأفضل وأسهل رحلة مع وكالة مور آند إيزي للسفر)##]">
     <!-- Title & Description -->
     <basis core="dbsource" source="hosting" name="tag" urlid="[##cms.seo.urlid##]">
       <member type="list" name="list" request="taglist" preview=""></member>
@@ -26,12 +26,12 @@
       </face>
     </basis>
     <!-- pwa metatags -->
-    <basis core="call" file="pwa.inc" lid="1" />
+    <basis core="call" file="pwa.inc" lid="3" />
     <!-- common styles for all page -->
-    <basis core="call" file="style.inc" lid="1" />
+    <basis core="call" file="style.inc" lid="3" />
   </head>
   <body>
-    <basis core="call" file="header.inc" lid="1" />
+    <basis core="call" file="header.inc" lid="3" />
     <main>
       <section class="max-xl:w-[97%] xl:max-w-7xl mx-auto mt-14">
         <basis core="list" datamembername="db.gallery-list">
@@ -57,6 +57,6 @@
 
     </main>
 
-    <basis core="call" file="footer.inc" lid="1" />
+    <basis core="call" file="footer.inc" lid="3" />
   </body>
 </html>
