@@ -328,6 +328,9 @@ fieldset hr {
 .searched-flight {
   border-bottom: 1px dashed var(--secondary);
 }
+.has-select-input::before{
+  top: 2.2em !important;
+}
 .progress-bar {
   background-color: var(--secondary) !important;
 }
@@ -407,6 +410,10 @@ fieldset hr {
 }
 .loading-img {
   margin-top: 1em;
+}
+.after-btn,
+.before-btn {
+  padding: 0.5em 0.25em !important;
 }
 /*<!--------------------------------END CSS LIST TEMPLATE 3-------------------------------*/
 /*<!--------------------------------START CSS VIEW TEMPLATE 3-------------------------------*/
@@ -557,4 +564,3 @@ i[class^="flaticon-"]:before {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
- 

@@ -704,9 +704,6 @@ body {
 .p-1\.5 {
   padding: 0.375rem;
 }
-.p-2 {
-  padding: 0.5rem;
-}
 .p-3 {
   padding: 0.75rem;
 }
@@ -734,10 +731,6 @@ body {
 .px-3 {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
-}
-.px-4 {
-  padding-left: 1rem;
-  padding-right: 1rem;
 }
 .px-6 {
   padding-left: 1.5rem;

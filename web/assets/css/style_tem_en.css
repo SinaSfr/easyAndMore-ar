@@ -39,7 +39,7 @@ i[class*=" flaticon-"]:before {
 input,
 select,
 button {
-  font-family: "IRANSansWebEnNum";
+  font-family: "Dana";
 }
 .flaticon-phone-call:before {
   content: "\f136";
