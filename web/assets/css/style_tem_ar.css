@@ -328,9 +328,6 @@ fieldset hr {
 .searched-flight {
   border-bottom: 1px dashed var(--secondary);
 }
-.has-select-input::before{
-  top: 2.2em !important;
-}
 .progress-bar {
   background-color: var(--secondary) !important;
 }
@@ -411,9 +408,14 @@ fieldset hr {
 .loading-img {
   margin-top: 1em;
 }
-.after-btn,
-.before-btn {
-  padding: 0.5em 0.25em !important;
+.has-select-input::before{
+  top: 2.2em !important;
+}
+.has-select::before{
+  top: 0.6em;
+}
+.coupon-content{
+  flex-wrap: nowrap;
 }
 /*<!--------------------------------END CSS LIST TEMPLATE 3-------------------------------*/
 /*<!--------------------------------START CSS VIEW TEMPLATE 3-------------------------------*/
@@ -422,7 +424,7 @@ fieldset hr {
   border: 1px solid var(--secondary);
 }
 .next-btn {
-  background-color: var(--secondary);
+  background-color: var(--primary);
 }
 .next-btn:hover {
   background-color: var(--secondary);
@@ -463,11 +465,11 @@ fieldset hr {
 }
 .buyer-type ul li.active,
 .buyer-type ul li:hover {
-  background-color: var(--secondary);
+  background-color: var(--primary);
   color: #fff;
 }
 .buyer-type ul li {
-  border: 1px solid var(--secondary);
+  border: 1px solid var(--primary);
   color: var(--primary);
 }
 .login-btn {
@@ -515,7 +517,7 @@ fieldset hr {
   background-color: var(--secondary);
 }
 .background-color_3 {
-  background-color: #252563;
+  background-color: #363215;
 }
 .background-color_white {
   background-color: #ffffff;
@@ -564,3 +566,4 @@ i[class^="flaticon-"]:before {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+ 
